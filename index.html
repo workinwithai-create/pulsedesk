@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PulseDesk — Groove Lock</title>
+<style>
+body { font-family: system-ui, sans-serif; background:#111; color:#eee; margin:20px; }
+button, input, select { margin:4px; padding:8px; }
+#playhead { height:20px; background:#333; margin:10px 0; }
+#progress { height:100%; background:#0af; width:0; }
+.muted { opacity:0.5; }
+</style>
+</head>
+<body>
+<h1>PulseDesk</h1>
+<p>Focused drum + bass groove desk. Your BPM and key first. Live samples. Exports on the grid.</p>
+<div id="start" style="padding:20px; background:#222;">Tap to start audio</div>
+<div id="app" style="display:none;">
+<label>BPM <input type="number" id="bpm" min="60" max="180" value="92"></label>
+<label>Key <select id="key"><option>C</option><option>Am</option><option>F</option><option>G</option></select></label>
+<label>Bars <input type="number" id="bars" min="1" max="16" value="8"></label>
+<button id="play">Play</button> <button id="stop">Stop</button>
+<button id="exportWav">Export WAV</button> <button id="exportMid">Export MIDI</button>
+<div id="playhead"><div id="progress"></div></div>
+<div>
+<button class="mute" data-chair="kick">Kick</button>
+<button class="mute" data-chair="snare">Snare</button>
+<button class="mute" data-chair="hat">Hat</button>
+<button class="mute" data-chair="bass">Bass</button>
+</div>
+<div id="status">Ready</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
